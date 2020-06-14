@@ -16,13 +16,15 @@ const PORT = process.env.PORT || 8080;
 //  if you attempt to access request.body without this, it won't work
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+//  TODO: define this middleware that allows my html files to display appropriately, weren't displaying properly on localhost prior to adding this in
+app.use(express.static("public"));
 
 // Router
 //  the below points our server to a series of "route" files
 //  these routes give our server a "map" of how to respond when users
 //  visit or request data from various URLs
 require("./routes/htmlRoutes")(app);
-// require("./routes/apiRoutes")(app);
+require("./routes/apiRoutes")(app);
 
 // Listener
 //  The below code starts our server

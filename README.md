@@ -8,6 +8,16 @@
 
 <!-- ran npm i path under "Develop" folder so that I could require path module -->
 
+<!-- worked on getting server.js file established and running our server -->
+
+<!-- worked on establishing htmlRoutes.js file and linked to server.js -->
+
+<!-- worked on establishing apiRoutes.js file and linked to server.js -->
+
+<!-- worked on .get method within apiRoutes.js file -->
+
+<!-- working on .post method within apiRoutes.js file -->
+
 # Unit 11 Express Homework: Note Taker
 
 ## Description
