@@ -10,10 +10,12 @@
 //     `id` property, and then rewrite the notes to the `db.json` file.
 
 // Dependencies
-//  including
+//  including fs library for use of readFile and writeFile modules
 const fs = require("fs");
 //  we need to include the "path" package to get the correct file path for our html
 const path = require("path");
+//  referencing .json file for use in this file
+const notes = require("../db/db.json");
 
 // we need to export our router so that it can be included in our server.js
 module.exports = (app) => {
@@ -21,21 +23,18 @@ module.exports = (app) => {
   // Below code handles when users "visit" a page.
   // In the below case when the user visits the defined link they are
   // shown all notes in JSON format
-  // use readFile() from fs
   app.get("/api/notes", (req, res) => {
-    fs.readFile("./db/db.json", "utf8", (err, data) => {
-      if (err) throw err;
-      console.log(data);
-      res.json(data);
-    });
+    res.json(notes);
   });
   // API POST Request
   // use writeFile() from fs
-  app.post("/api/notes", (req, res) => {
-    fs.writeFile("./db/db.json", "utf8", (err, data) => {
-      if (err) throw err;
-      console.log(data);
-      res.json(data);
-    });
-  });
+  // app.post("/api/notes", (req, res) => {
+  //   fs.writeFile("./db/db.json", "utf8", (err, data) => {
+  //     if (err) throw err;
+  //     var newNote = req.body;
+  //     console.log(newNote);
+  //     // console.log(data);
+  //     res.json(newNote);
+  //   });
+  // });
 };
