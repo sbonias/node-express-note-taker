@@ -16,7 +16,7 @@
 
 <!-- worked on .get method within apiRoutes.js file -->
 
-<!-- working on .post method within apiRoutes.js file -->
+<!-- worked on initial .post method within apiRoutes.js file -->
 
 # Unit 11 Express Homework: Note Taker
 

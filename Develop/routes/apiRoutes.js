@@ -21,20 +21,15 @@ const notes = require("../db/db.json");
 module.exports = (app) => {
   // API GET Request
   // Below code handles when users "visit" a page.
-  // In the below case when the user visits the defined link they are
-  // shown all notes in JSON format
+  // In the below case when the user visits the defined link they are shown all notes in JSON format
   app.get("/api/notes", (req, res) => {
     res.json(notes);
   });
   // API POST Request
-  // use writeFile() from fs
-  // app.post("/api/notes", (req, res) => {
-  //   fs.writeFile("./db/db.json", "utf8", (err, data) => {
-  //     if (err) throw err;
-  //     var newNote = req.body;
-  //     console.log(newNote);
-  //     // console.log(data);
-  //     res.json(newNote);
-  //   });
-  // });
+  app.post("/api/notes", (req, res) => {
+    var newNote = req.body;
+    console.log(newNote);
+    notes.push(newNote);
+    res.json(newNote);
+  });
 };
