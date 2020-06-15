@@ -27,7 +27,7 @@ An application that can be used to write, save and delete notes. This app will u
 ## Deployed Application
 
 - [The URL of the GitHub repository](https://github.com/sbonias/node-express-note-taker)
-- [The URL of the Deployed Application](https://github.com/sbonias/node-temp-engine-emp-summary)
+- [The URL of the Deployed Application](https://thawing-ravine-33913.herokuapp.com/)
 
 ## Visual Presentation
 
