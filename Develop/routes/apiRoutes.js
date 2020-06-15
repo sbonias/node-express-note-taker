@@ -46,16 +46,16 @@ module.exports = (app) => {
 
   // API DELETE Request
   // this allows user to delete messages that get added to json file within the correct format
-  // TODOS: need to figure out how to assign a unique id to each new note
+  // TODOS: need to figure out how to capture id of note being deleted, store to a variable?
+  // need to rewrite notes to db.json file once not has been deleted by calling writeFile function
   app.delete("/api/notes", (req, res) => {});
 };
 
 const writeFile = () => {
-  fs.writeFileSync("./db/db.json", JSON.stringify(notes)),
-    function (err) {
-      if (err) {
-        throw err;
-      }
-      console.log("Successfully wrote to db.json file!");
-    };
+  fs.writeFile("./db/db.json", JSON.stringify(notes), function (err) {
+    if (err) {
+      throw err;
+    }
+    console.log("Successfully wrote to db.json file!");
+  });
 };
