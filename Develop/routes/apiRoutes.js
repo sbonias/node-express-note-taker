@@ -25,11 +25,22 @@ module.exports = (app) => {
   app.get("/api/notes", (req, res) => {
     res.json(notes);
   });
+
   // API POST Request
+  // this allows user to add messages that get added to json file within the correct format
+  // TODOS: need to figure out how to assign a unique id to each new note
   app.post("/api/notes", (req, res) => {
-    var newNote = req.body;
-    console.log(newNote);
+    let newNote = req.body;
+    let otherId = notes[notes.length - 1]["id"];
+    let brandNewId = otherId + 1;
+    newNote["id"] = brandNewId;
     notes.push(newNote);
-    res.json(newNote);
+    console.log(newNote);
+    res.json(notes);
   });
+
+  // API DELETE Request
+  // this allows user to add messages that get added to json file within the correct format
+  // TODOS: need to figure out how to assign a unique id to each new note
+  // app.delete("/api/notes", (req, res) => {});
 };
