@@ -1,107 +1,60 @@
-### Pseudocode
+# Node-Express-Note-Taker
 
-<!-- ran npm install under "Develop" folder so that I could require express module -->
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-<!-- added .gitignore file to your directory and include "node_modules", ".DS_Store/" -->
+## Table of Contents
 
-<!-- created routes directory to store individual routes folders: apiRoutes.js & htmlRoutes.js -->
-
-<!-- ran npm i path under "Develop" folder so that I could require path module -->
-
-<!-- worked on getting server.js file established and running our server -->
-
-<!-- worked on establishing htmlRoutes.js file and linked to server.js -->
-
-<!-- worked on establishing apiRoutes.js file and linked to server.js -->
-
-<!-- worked on .get method within apiRoutes.js file -->
-
-<!-- worked on initial .post method within apiRoutes.js file -->
-
-<!-- worked on adding ID to object array via .post method within apiRoutes.js file -->
-
-<!-- worked on adding fs.writeFileAsync to code for db.json file to get updated with notes -->
-
-<!-- worked on adding fs.writeFileAsync to an arrow function as it will be used more than once -->
-
-# Unit 11 Express Homework: Note Taker
+- [Description](#description)
+- [Challenges](#challenges)
+- [Deployed Application](#deployed-application)
+- [Visual Presentation](#visual-presentation)
+- [Installation Requirements](#installation-requirements)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests-implemented)
+- [Questions](#questions)
 
 ## Description
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+An application that can be used to write, save and delete notes. This app will use an express backend and save as well as retrieve notes data from a JSON file.
 
-- The application frontend has already been created, it's your job to build the backend and connect the two.
+## Challenges
 
-- The following HTML routes should be created:
+- Was unable to get the .delete method to work
+- Was unable to get the .get "\*" route to work as it would not allow for the apiRoutes to execute
+- Will need to invest more time in figuring out the above issues
 
-  - GET `/notes` - Should return the `notes.html` file.
+## Deployed Application
 
-  - GET `*` - Should return the `index.html` file
+- [The URL of the GitHub repository](https://github.com/sbonias/node-express-note-taker)
+- [The URL of the Deployed Application](https://github.com/sbonias/node-temp-engine-emp-summary)
 
-- The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
+## Visual Presentation
 
-- The following API routes should be created:
+[A video demonstrating the entirety of the app's functionality ](https://drive.google.com/file/d/1Ymd5r_EFN5AzN7_MFjlMK_2YxSbpDP9Z/view)
 
-  - GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
+## Installation Requirements
 
-  - POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
+```
+clone repo
+run npm install express
+run npm install path
+```
 
-  - DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+## Usage
 
-## User Story
+AS A user, I want to be able to write and save notes I WANT to be able to delete notes I've written before SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
-AS A user, I want to be able to write and save notes
+## Contributing
 
-I WANT to be able to delete notes I've written before
+Sam Bonias
 
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+<!-- ## Tests Implemented
 
-## Business Context
+Jest based unit testing was applied to the classes -->
 
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
+## Questions
 
-## Acceptance Criteria
+![image](https://avatars1.githubusercontent.com/u/61953313?s=460&u=01e7d234d06ebec1cc6db4f49ebbdd2033aee143&v=4)
 
-Application should allow users to create and save notes.
-
-Application should allow users to view previously saved notes.
-
-Application should allow users to delete previously saved notes.
-
-## Deploying the App
-
-You will not be able to deploy your server side code on GitHub pages. This app should be deployed on Heroku. Carefully follow the [Heroku Guide](../04-Supplemental/HerokuGuide.md) for getting your app deployed on Heroku.
-
----
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
-
-- Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-- Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-- Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-- Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-- Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-- Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-- The URL of the deployed application. This should be the link to the url provided by Heroku. Be sure not to submit a link to the Heroku dashboard.
-
-- The URL of the GitHub repository
-
----
-
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+- sbonias84@gmail.com

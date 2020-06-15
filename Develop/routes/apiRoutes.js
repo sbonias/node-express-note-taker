@@ -41,14 +41,26 @@ module.exports = (app) => {
     // use fs.writeFile to post newNote to db.json file
     // had to use writeFileSync due to callback error
     // https://stackoverflow.com/questions/51150956/how-to-fix-this-error-typeerror-err-invalid-callback-callback-must-be-a-funct/51151244
+    // figured out what was wrong with my syntax so now I'm able to use writeFile
     writeFile();
   });
 
   // API DELETE Request
   // this allows user to delete messages that get added to json file within the correct format
-  // TODOS: need to figure out how to capture id of note being deleted, store to a variable?
+  // TODOS: need to figure out how to capture id of note being deleted, store to a variable? DONE
   // need to rewrite notes to db.json file once not has been deleted by calling writeFile function
-  app.delete("/api/notes", (req, res) => {});
+  app.delete("/api/notes/:id", (req, res) => {
+    let chosen = parseInt(req.params.id);
+    console.log(chosen);
+    console.log(notes);
+
+    // loop through array of objects
+    notes.forEach((item) => {
+      if (chosen === notes.id) {
+        console.log(notes);
+      }
+    });
+  });
 };
 
 const writeFile = () => {
