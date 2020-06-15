@@ -28,7 +28,8 @@ module.exports = (app) => {
 
   // API POST Request
   // this allows user to add messages that get added to json file within the correct format
-  // TODOS: need to figure out how to assign a unique id to each new note
+  // TODOS: need to figure out how to assign a unique id to each new note - DONE
+  // Added new property of "id" to db.json file in order to make this work
   app.post("/api/notes", (req, res) => {
     let newNote = req.body;
     let otherId = notes[notes.length - 1]["id"];
@@ -36,11 +37,21 @@ module.exports = (app) => {
     newNote["id"] = brandNewId;
     notes.push(newNote);
     console.log(newNote);
-    res.json(notes);
+    res.json(newNote);
+    // use fs.writeFile to post newNote to db.json file
+    // had to use writeFileSync due to callback error
+    // https://stackoverflow.com/questions/51150956/how-to-fix-this-error-typeerror-err-invalid-callback-callback-must-be-a-funct/51151244
+    fs.writeFileSync("./db/db.json", JSON.stringify(notes)),
+      function (err) {
+        if (err) {
+          throw err;
+        }
+        console.log("Successfully wrote to db.json file!");
+      };
   });
 
   // API DELETE Request
-  // this allows user to add messages that get added to json file within the correct format
+  // this allows user to delete messages that get added to json file within the correct format
   // TODOS: need to figure out how to assign a unique id to each new note
-  // app.delete("/api/notes", (req, res) => {});
+  app.delete("/api/notes", (req, res) => {});
 };
