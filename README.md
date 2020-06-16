@@ -11,7 +11,6 @@
 - [Installation Requirements](#installation-requirements)
 - [Usage](#usage)
 - [Contributing](#contributing)
-<!-- - [Tests](#tests-implemented) -->
 - [Questions](#questions)
 
 ## Description
