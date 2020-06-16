@@ -21,7 +21,6 @@ An application that can be used to write, save and delete notes. This app will u
 
 - Was unable to get the .delete method to work
 - Was unable to get the .get "\*" route to work as it would not allow for the apiRoutes to execute
-- Had issues with deploying to Heroku, therefore link doesn't work: "Build Failed, check your build output"
 - Will need to invest more time in figuring out the above issues
 
 ## Deployed Application
