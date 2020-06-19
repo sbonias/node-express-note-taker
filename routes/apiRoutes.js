@@ -39,9 +39,6 @@ module.exports = (app) => {
     console.log(newNote);
     res.json(newNote);
     // use fs.writeFile to post newNote to db.json file
-    // had to use writeFileSync due to callback error
-    // https://stackoverflow.com/questions/51150956/how-to-fix-this-error-typeerror-err-invalid-callback-callback-must-be-a-funct/51151244
-    // figured out what was wrong with my syntax so now I'm able to use writeFile
     writeFile();
   });
 
@@ -52,12 +49,14 @@ module.exports = (app) => {
   app.delete("/api/notes/:id", (req, res) => {
     let chosen = parseInt(req.params.id);
     console.log(chosen);
-    console.log(notes);
-
+    // console.log(notes);
+    // console.log(notes[1].id);
     // loop through array of objects
-    notes.forEach((item) => {
-      if (chosen === notes.id) {
-        console.log(notes);
+    notes.forEach((note) => {
+      // create conditional statement that looks for match beween
+      // chosen note and corresponding object item
+      if (note.id === chosen) {
+        notes.splice(note, 1);
       }
     });
   });

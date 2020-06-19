@@ -19,8 +19,9 @@ An application that can be used to write, save and delete notes. This app will u
 
 ## Challenges
 
-- Was unable to get the .delete method to work
+- Was unable to get the .delete method to fully work
 - Was unable to get the .get "\*" route to work as it would not allow for the apiRoutes to execute
+- Noticed that if I delete all notes and try to add a new note, it fails, I think this is due to the way that my code works where it needs to reference an existing array item (1)
 - Will need to invest more time in figuring out the above issues
 
 ## Deployed Application
